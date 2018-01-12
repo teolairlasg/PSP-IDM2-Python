@@ -12,16 +12,21 @@ def lanzar_hijo():
 	if pid == 0:
 		imprimir_pid()
 		os._exit(0)
-
-while True:
-	print("h: crear hijo")
-	print("q: salir")
-	opcion = input()
+print("h: crear hijo")
+print("q: salir")
+opcion = input()
+while opcion != "q":
 	if opcion == "h":
 		print("Creando hijo...")
 		lanzar_hijo()
 		time.sleep(1)
-	elif opcion == "q":
+	else:
+		print("opcion no válida")
 		break
-	else: 
-		continue
+	print("h: crear hijo")
+	print("q: salir")
+	opcion = input()
+else:
+	print("has pulsado q")
+	
+	
